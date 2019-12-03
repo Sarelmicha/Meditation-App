@@ -32,12 +32,13 @@ const app = function (){
         checkPlaying(song)
     });
 
-    //Select sound
+    //Select time
     timeSelect.forEach(function(option){
         option.addEventListener("click", function(){
             //When clicking a diffrent time the fakeDuration will change to display to screen.
             fakeDuration = this.getAttribute("data-time");
             timeDisplay.textContent = Math.floor(fakeDuration / 60) + ":" + Math.floor(fakeDuration % 60);
+            song.currentTime = 0;
         });
     });
 
@@ -75,10 +76,5 @@ const app = function (){
         }
     }
 }
-
-function animateCircle(){
-    
-}
-
 
 app();
