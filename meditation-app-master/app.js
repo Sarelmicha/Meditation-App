@@ -21,7 +21,9 @@ const app = function (){
     sounds.forEach(function(sound){
         sound.addEventListener("click", function(){
             //Change the global playing in the background sound and video
+            let tempTime = song.currentTime;
             song.src = this.getAttribute("data-sound");
+            song.currentTime = tempTime;
             video.src = this.getAttribute("data-video");
             checkPlaying(song);
         });
